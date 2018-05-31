@@ -1,6 +1,7 @@
 import React from 'react'
 
 
+
 export default class App extends React.Component {
 
   constructor(props) {
@@ -12,13 +13,20 @@ export default class App extends React.Component {
     filter: '',
     currentView: 'list',
     currDrinkIndex: null,
-    showSearchInput: false
+    showSearchInput: false,
+    showFilterInput: false
   }
 }
 
 handleQueryChange = (e) => {
   this.setState({
     search: e.target.value
+  })
+}
+
+handleQueryFilter = (e) => {
+  this.setState({
+    filter: e.target.value
   })
 }
 
@@ -41,7 +49,7 @@ handleSearchName = (e) => {
   .then(res => res.json())
   .then(res => {
     this.setState({
-      drinks: res.search
+      drinks: res.drinks
   })
 })
 }
@@ -53,7 +61,7 @@ handleFilterIng= (e) => {
   .then(res => res.json())
   .then(res => {
     this.setState({
-      drinks: res.filter
+      drinks: res.drinks
     })
   })
 }
@@ -61,25 +69,32 @@ handleFilterIng= (e) => {
 renderSearchInput = (e) => {
   e.preventDefault()
   this.setState({
-    showSearchInput: true
+    showSearchInput: !this.state.showSearchInput
+  })
+}
+
+renderFilterInput = (e) => {
+  e.preventDefault()
+  this.setState({
+    showFilterInput: !this.state.showFilterInput
   })
 }
 
 renderDrinkItem = (drink, index) => {
   return <div className="showDrink">
-    <p onClick={
+    <h4 onClick={
       (e) => this.setState({
         currDrinkIndex: e.target.dataset.index
       })
-    } key={index} data-index={index}>{drink.strDrink}</p>
+    } key={index} data-index={index}>{drink.strDrink}</h4>
     <span> <img src={drink.strDrinkThumb} />  </span>
-    <a>Show Recipe</a>
+    <a onClick="">Show Recipe</a>
 
   </div>
 }
 
   render() {
-    const {drinks, currDrinkIndex, showSearchInput} = this.state
+    const {drinks, currDrinkIndex, showSearchInput, showFilterInput} = this.state
 
 
     return <div className="menu">
@@ -88,15 +103,22 @@ renderDrinkItem = (drink, index) => {
       <form>
         <button onClick={this.handleSearch}>Random Cocktail</button>
         <button onClick={this.renderSearchInput}>Search By Cocktail Name</button>
-        <button onClick={this.renderSearchInput}>Search By Ingredient</button>
+          {showSearchInput &&
+            <form className="searchInput">
+              <input type="text" onChange={this.handleQueryChange} />
+              <button onClick={this.handleSearchName}>Go</button>
+            </form>
+          }
+        <button onClick={this.renderFilterInput}>Search By Ingredient</button>
+
+          {showFilterInput &&
+            <form className="filterInput">
+              <input type="text" onChange={this.handleQueryFilter} />
+              <button onClick={this.handleFilterIng}>Go</button>
+            </form>
+          }
       </form>
       <hr />
-      {showSearchInput &&
-        <form className="searchInput">
-          <input type="text" onChange={this.handleQueryChange} />
-          <button onClick={this.handleSearchName}>Go</button>
-        </form>
-      }
       {drinks.map(this.renderDrinkItem)}
 
       </div>
