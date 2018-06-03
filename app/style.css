@@ -27,6 +27,10 @@ body {
   align-items: center;
 }
 
+.showRecipe {
+  margin: 10%;
+}
+
 span, form {
   display: flex;
   flex-direction: column;
@@ -39,6 +43,20 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+a:hover {
+  text-shadow: 1px 0 0 white;
+  cursor: pointer;
 }
 
 img {
