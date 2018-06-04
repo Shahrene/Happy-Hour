@@ -2,6 +2,8 @@
 
 ## Cocktail Database
 
+###Visit [Happy Hour](https://shahrene.github.io/Happy-Hour/)
+
 It's the final week of WDI, its been a long 3 months, so its time for a drink... **BUT WHAT TO HAVE?!?**
 
 Luckily, the Happy Hour app has heaps of suggestions - search by name if you know what the drink is called or
@@ -26,7 +28,7 @@ I chose the API and chose three different searches I thought were useful. I crea
 
 The search by ingredient sent back only the name, id and photo of the drink, so a further call is made based on the id if the recipe is not fetched by the first call.
 
-I found the API was slow to return results so I found a gif to play while the results are loading. 
+I found the API was slow to return results so I found a gif to play while the results are loading.
 
 
 ## Next Steps
