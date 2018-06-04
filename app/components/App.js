@@ -93,8 +93,8 @@ export default class App extends React.Component {
       } key={index} data-index={index}>{drink.strDrink}</h4>
 
       <span> <img src={drink.strDrinkThumb} />  </span>
-      <a onClick={() => this.showRecipe(drink)} data-index={index}>"Show Recipe"</a>
-      {/*   */}
+      <a onClick={() => this.showRecipe(drink)} data-index={index}>Show Recipe</a>
+
 
       <div>{drink.fetched && this.renderRecipe(drink, index)}
       </div>
@@ -102,24 +102,6 @@ export default class App extends React.Component {
   }
 //shows the recipe when user clicks on 'show recipe'
   showRecipe = (drink) => {
-
-    // this.setState(prev => (
-    //   {
-    //     drinks: prev.drinks.map(d =>
-    //       d.idDrink === drink.idDrink ?
-    //         { ...d, showing: !d.showing } :
-    //         d
-    //       )
-    //   }
-    // ))
-    // var index = e.target.dataset.index
-    // var drinks = this.state.drinks
-
-
-    // this.setState({clicked: !this.state.clicked})
-    // drinks[index].showRecipe = !drinks[index].showRecipe
-    // this.setState({ drinks })
-    // console.log(drinks[index].idDrink)
 
     // makes further call for filter search to fetch drink by id
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink.idDrink}`)
@@ -177,7 +159,7 @@ export default class App extends React.Component {
 
       <form>
         <button onClick={this.handleSearch}>Random Cocktail</button>
-        <button onClick={this.renderSearchInput}>Search By Cocktail Name</button>
+        <button onClick={this.renderSearchInput}>Search Cocktail Name</button>
       </form>
 
       {showSearchInput &&
