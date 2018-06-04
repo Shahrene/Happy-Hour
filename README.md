@@ -2,7 +2,7 @@
 
 ## Cocktail Database
 
-###Visit [Happy Hour](https://shahrene.github.io/Happy-Hour/)
+*Visit [Happy Hour](https://shahrene.github.io/Happy-Hour/)*
 
 It's the final week of WDI, its been a long 3 months, so its time for a drink... **BUT WHAT TO HAVE?!?**
 
