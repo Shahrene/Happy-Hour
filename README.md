@@ -14,11 +14,11 @@ Each drink has a recipe and you can select *Show Recipe* for the drink you want.
 ## Tech Used
 
 * ES6, HTML, CSS
-* The brilliant API from https://www.thecocktaildb.com/
-* React.js
-* Node.js
-* DT's awesome react starter
-* Giphy for my loading gif
+* The brilliant [Cocktail Database](https://www.thecocktaildb.com/)
+* [React.js](https://reactjs.org/)
+* [Node.js](https://nodejs.org/en/)
+* DT's awesome [react starter](https://github.com/epoch/webpack3-react-starter)
+* [Giphy](https://giphy.com/) for my loading animation
 
 ## Approach
 
@@ -35,3 +35,5 @@ I found the API was slow to return results so I found a gif to play while the re
 
 * Refactor my code into more components
 * Toggle Hide Recipe
+* Have a database which stores cocktails that have been searched
+* Maybe include a 'bars near me' search using a different API 
