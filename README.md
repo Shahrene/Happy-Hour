@@ -26,7 +26,7 @@ I designed the app mobile first because I thought that people would be more like
 
 I chose the API and chose three different searches I thought were useful. I created the buttons and added events to each which then either made the API call or dropped down in an input box.
 
-The search by ingredient sent back only the name, id and photo of the drink, so a further call is made based on the id if the recipe is not fetched by the first call.
+The search by ingredient sent back only the name, id and photo of the drink, so the Recipe info is checked for when the *Show Recipe* link is clicked and if it is not fetched a further call is made based on the id.
 
 I found the API was slow to return results so I found a gif to play while the results are loading.
 
@@ -36,4 +36,6 @@ I found the API was slow to return results so I found a gif to play while the re
 * Refactor my code into more components
 * Toggle Hide Recipe
 * Have a database which stores cocktails that have been searched
-* Maybe include a 'bars near me' search using a different API 
+* Maybe include a 'bars near me' search using a different API
+
+![App1](Screenshot1.png)  ![App2](Screenshot2.png)
