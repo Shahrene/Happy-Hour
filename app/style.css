@@ -8,10 +8,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #392e67;
   color: white;
   font-family:'Fira Sans',sans-serif;
   font-size: 1em;
+}
+
+.menu {
+  background-color: #392e67;
+  width: 414px;
+  length: 100%;
+  margin-top: 5%;
+  padding-top: 3%;
 }
 
 .main {
@@ -50,16 +57,16 @@ h1 {
 a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-size: 1.1em;
+}
+
+a:hover, a:active{
+  text-shadow: 1px 0 0 white;
+  cursor: pointer;
 }
 
 li {
   list-style-type: none;
-}
-
-a:hover {
-  text-shadow: 1px 0 0 white;
-  cursor: pointer;
 }
 
 img {
@@ -112,7 +119,7 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-button:hover {
+button:hover, button:active{
   background-color: #ffffff;
   color: #009ac9;
   border-color: #009ac9;

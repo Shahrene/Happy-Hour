@@ -16,7 +16,6 @@ export default class App extends React.Component {
     currentRecipe: null,
     currDrinkIndex: null,
     showSearchInput: false,
-    clicked: true
     }
   }
 //for search input box
@@ -93,13 +92,21 @@ export default class App extends React.Component {
       } key={index} data-index={index}>{drink.strDrink}</h4>
 
       <span> <img src={drink.strDrinkThumb} />  </span>
-      <a onClick={() => this.showRecipe(drink)} data-index={index}>Show Recipe</a>
+      <a onClick={() => this.toggleRecipe(drink)} onClick={() => this.showRecipe(drink)} data-index={index}>Show Recipe</a>
 
 
       <div>{drink.fetched && this.renderRecipe(drink, index)}
       </div>
     </div>
   }
+
+  toggleRecipe = (e) => {
+    var index = e.target.dataset.index
+    var drinks = this.state.drinks
+    drinks[index].showRecipe = !drinks[index].showRecipe
+    this.setState({ drinks })
+  }
+
 //shows the recipe when user clicks on 'show recipe'
   showRecipe = (drink) => {
 
@@ -132,7 +139,9 @@ export default class App extends React.Component {
       <h4>{drink.strDrink}</h4>
       <p>Glass: {drink.strGlass}</p>
       <p>Method: {drink.strInstructions}</p>
+      <p>Ingredients:</p>
       <ul>
+
         <li>{drink.strMeasure1} {drink.strIngredient1}</li>
         <li>{drink.strMeasure2} {drink.strIngredient2}</li>
         <li>{drink.strMeasure3} {drink.strIngredient3}</li>
